@@ -1,0 +1,22 @@
+<% if (view) { -%>
+{
+    "name": "<%= projectName %>",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "pm2 start src/bin/www",
+        "dev": "pm2-dev src/bin/www",
+        "test": "node src/bin/www"
+    },
+    
+    "dependencies": {
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "dotenv": "^10.0.0",
+        "ejs": "~2.6.1",
+        "express": "~4.16.1",
+        "http-errors": "~1.6.3",
+        "morgan": "~1.9.1"
+    }
+}  
+<% } -%>
