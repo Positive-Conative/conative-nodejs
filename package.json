@@ -1,0 +1,27 @@
+{
+  "name": "conative-nodejs",
+  "version": "0.1.7-beta",
+  "description": "Conative's Node.js Generator",
+  "main": "bin/main.js",
+  "bin": "bin/main.js",
+  "author": "Conative <kyj970513@naver.com> (http://not_yet)",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^8.0.0",
+    "fs-extra": "^10.0.0"
+  },
+  "keywords": [
+    "conative",
+    "node",
+    "generator"
+  ],
+  "homepage": "not_yet",
+  "bugs": {
+    "url": "https://not_yet",
+    "email": "kyj970513@naver.com"
+  },
+  "files": [
+    "lib",
+    "!dist"
+  ]
+}
