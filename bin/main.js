@@ -25,8 +25,6 @@ program
 
 // Get dir name
 const dirName = program.opts().name;
-const createDir = require(path.join(__dirname, 'bin', 'createDir'));
-
 try{
     /**
      *  If file exists, throw error.
@@ -50,7 +48,10 @@ try{
             await ejsRender("app", "/src/app.js");
             await ejsRender("www", "/src/bin/www");
             await ejsRender("router", "/src/routers/index.js");
+            await ejsRender("controller", "/src/controllers/indexController.js");
 
+
+            // view area.
             renderOption.testStr = "%= test %";
             await ejsRender("view", "/src/views/index.ejs", renderOption);
             
@@ -86,4 +87,15 @@ async function ejsRender(name, filePath, renderOption = { view: true }) {
         }
         fs.writeFileSync(`${dirName}${filePath}`, str, 'utf8');
     });
+}
+
+async function createDir(dirName) {
+    fs.mkdirSync(`${dirName}`);
+    fs.mkdirSync(`${dirName}/src`);
+    fs.mkdirSync(`${dirName}/src/bin`);
+    fs.mkdirSync(`${dirName}/src/config`);
+    fs.mkdirSync(`${dirName}/src/controllers`);
+    fs.mkdirSync(`${dirName}/src/models`);
+    fs.mkdirSync(`${dirName}/src/routers`);
+    fs.mkdirSync(`${dirName}/src/views`);
 }
