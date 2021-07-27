@@ -22,6 +22,8 @@ Npm : https://www.npmjs.com/package/conative-nodejs
 # Install
 * <b>npm i -g conative-nodejs</b><br>
 
+<br>
+
 # Using
 * <b>conative-nodejs [ Options ] -n [ Path/Dirname ]</b><br>
     * ex) conative-nodejs -n dirname<br>
@@ -31,7 +33,7 @@ Npm : https://www.npmjs.com/package/conative-nodejs
 
 <br>
 
-# options
+# Options
 * -n, --n &lt;path/directory name&gt; : Required fields
 * -s, --strict : Use strict Mode.
 * -v, -ver : Check version.
