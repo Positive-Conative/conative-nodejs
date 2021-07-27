@@ -1,25 +1,19 @@
 #!/usr/bin/env node
 "use strict";
 
-const path = require("path");
-// const fse = require('fs-extra');
-
-const VERSION = require('../package.json').version;
-
 const { Command } = require('commander');
 const program = new Command();
+const path = require("path");
 const fs = require('fs');
 const ejs = require('ejs');
+const VERSION = require('../package.json').version;
 
-/**
- *  Commander setting area
- */
-
+// Commander setting area
 program
-    .requiredOption('-n, --name <name>', 'Input directory name')
-    .version(VERSION, '-v, -ver', 'output the current version')
-    .usage('conative-nodejs [options] [Path/Filename]')
+    .usage('conative-nodejs [options] -n [Path/Dirname]')
+    .requiredOption('-n, --name <name>', 'Input path/directory name')
     .option('-s, --strict', 'use strict mode')
+    .version(VERSION, '-v, -ver', 'output the current version')
     .showHelpAfterError()
     .parse();
 
@@ -84,7 +78,6 @@ try{
 }
 
 /**
- * 
  * @param {String} name now file exists ../templates/[filename]
  * @param {String} filePath project file will saved [dir/filename]
  */
@@ -105,6 +98,10 @@ async function ejsRender(name, filePath, renderOption = {}) {
     });
 }
 
+/**
+ * @param {String} dirName Root of the file to be created
+ * Making Directory
+ */
 async function createDir(dirName) {
     fs.mkdirSync(`${dirName}`);
     fs.mkdirSync(`${dirName}/src`);

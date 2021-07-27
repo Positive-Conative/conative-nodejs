@@ -7,14 +7,53 @@
 Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | Latest ✔ | 8 ✔ |
 
 
-> This NPM Module is based on express-generator.
+# NOTE
+> This NPM Module is based on <u><b>express-generator.</b></u><br>
+> It will use <u><b>express, ejs, mysql.</b></u> and using <u><b>MVC Pattern.</b></u>
 
-It is an npm module that I made for my convenience, and if you find a bug while using it because you are interested, I would appreciate it if you let me know.
+It is an npm module that I made for my convenience, and if you find a bug while using it because you are interested, I would appreciate it if you let me know. :)
 
-It is not yet fully completed, and you need to check the module, DB Connection, Service, etc.
-
-## Installing
-<b>conative-nodejs [ Options ] [ Path/Filename ]</b>
-
-Git : https://github.com/Positive-Conative/conative-nodejs
+Git : https://github.com/Positive-Conative/conative-nodejs 
+<br>
 Npm : https://www.npmjs.com/package/conative-nodejs
+
+<br>
+
+# Installing
+<b>conative-nodejs [ Options ] -n [ Path/Dirname ]</b>
+<b>ex) conative-nodejs -n dirname </b>
+<b>ex) conative-nodejs -s -n /your/path/dirname </b>
+
+<br>
+
+# options
+* -n, --n &lt;path/directory name&gt; : Required fields
+* -s, --strict : Use strict Mode.
+* -v, -ver : Check version.
+
+<br>
+
+# Directory Tree
+> conative-nodejs -n helloworld
+```
+helloworld
+├── package.json
+└── src
+    ├── app.js
+    ├── bin
+    │   └── www
+    ├── config
+    │   └── dbConnection.js
+    ├── controllers
+    │   └── indexController.js
+    ├── models
+    │   └── testDAO.js
+    ├── routers
+    │   ├── index.js
+    │   └── test.js
+    ├── services
+    │   └── indexService.js
+    └── views
+        ├── error.ejs
+        └── index.ejs
+```
