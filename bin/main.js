@@ -47,6 +47,7 @@ try{
             // Config area.
             await ejsRender("package", "/package.json", renderOption);
             await ejsRender("env", "/.env");
+            await ejsRender("dbConnect", "/src/config/dbConnection.js");
             
             
             // Base area.
@@ -59,9 +60,10 @@ try{
             await ejsRender("routerTest", "/src/routers/test.js");
 
 
-            // Controller & Service area.
+            // Controller & Service & Model area.
             await ejsRender("controller", "/src/controllers/indexController.js");
             await ejsRender("service", "/src/services/indexService.js");
+            await ejsRender("model", "/src/models/testDAO.js");
 
 
             // View area.
