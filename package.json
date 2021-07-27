@@ -1,6 +1,6 @@
 {
   "name": "conative-nodejs",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Conative's Node.js Generator",
   "main": "bin/main.js",
   "bin": "bin/main.js",
@@ -13,7 +13,12 @@
   "keywords": [
     "conative",
     "node",
-    "generator"
+    "generator",
+    "express-generator",
+    "mvc",
+    "javascript",
+    "mysql",
+    "comfortable :)"
   ],
   "homepage": "not_yet",
   "bugs": {

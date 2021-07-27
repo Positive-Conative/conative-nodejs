@@ -20,8 +20,8 @@ Npm : https://www.npmjs.com/package/conative-nodejs
 <br>
 
 # Installing
-<b>conative-nodejs [ Options ] -n [ Path/Dirname ]</b>
-<b>ex) conative-nodejs -n dirname </b>
+<b>conative-nodejs [ Options ] -n [ Path/Dirname ]</b><br>
+<b>ex) conative-nodejs -n dirname </b><br>
 <b>ex) conative-nodejs -s -n /your/path/dirname </b>
 
 <br>
