@@ -25,7 +25,7 @@ program
 
 // Get dir name
 const dirName = program.opts().name;
-const createDir = require('../lib/createDir');
+const createDir = require('./createDir');
 
 try{
     /**
@@ -78,7 +78,7 @@ try{
  * @param {String} filePath project file will saved [dir/filename]
  */
 async function ejsRender(name, filePath, renderOption = { view: true }) {
-    const target = path.join(__dirname,'..','templates',`${name}.ejs`);
+    const target = path.join(__dirname,'..','lib',`${name}.ejs`);
 
     await ejs.renderFile(target, renderOption, "locals", function(err, str) {
         if(err != undefined) {
