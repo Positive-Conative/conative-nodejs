@@ -60,3 +60,12 @@ helloworld
         ├── error.ejs
         └── index.ejs
 ```
+<br>
+
+# Code Flow
+> Router → Controller → Service → Model
+
+* /router/index.js
+* /controllers/indexController.js
+* /services/indexService.js
+* /models/testDAO.js
