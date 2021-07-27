@@ -1,6 +1,6 @@
 {
   "name": "conative-nodejs",
-  "version": "0.2.8",
+  "version": "1.0.0",
   "description": "Conative's Node.js Generator",
   "main": "bin/main.js",
   "bin": "bin/main.js",

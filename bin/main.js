@@ -14,14 +14,14 @@ const ejs = require('ejs');
 /**
  *  Commander setting area
  */
+
 program
     .requiredOption('-n, --name <name>', 'Input directory name')
-    // .option('-a, --compress', 'compress')
     .version(VERSION, '-v, -ver', 'output the current version')
     .usage('conative-nodejs [options] [Path/Filename]')
+    .option('-s, --strict', 'use strict mode')
     .showHelpAfterError()
     .parse();
-
 
 // Get dir name
 const dirName = program.opts().name;
@@ -37,15 +37,9 @@ try{
             // First, Create Directory
             await createDir(dirName);
 
-            const renderOption = { 
-                view: true,
-            };
-
-            renderOption.projectName = "default";
             // Next, Rendering EJS
-
             // Config area.
-            await ejsRender("package", "/package.json", renderOption);
+            await ejsRender("package", "/package.json", {projectName: "default"});
             await ejsRender("env", "/.env");
             await ejsRender("gitIgnore", "/.gitignore");
             await ejsRender("dbConnect", "/src/config/dbConnection.js");
@@ -68,14 +62,14 @@ try{
 
 
             // View area.
-            renderOption.testStr = "%= test %";
-            await ejsRender("view", "/src/views/index.ejs", renderOption);
-
-            renderOption.errorArr = [];
-            renderOption.errorArr.push("%= message %");
-            renderOption.errorArr.push("%= error.status %");
-            renderOption.errorArr.push("%= error.stack %");
-            await ejsRender("viewError", "/src/views/error.ejs", renderOption);
+            await ejsRender("view", "/src/views/index.ejs", {testStr: "%= test %"});
+            await ejsRender("viewError", "/src/views/error.ejs", {
+                errorArr: [
+                    "%= message %",
+                    "%= error.status %",
+                    "%= error.stack %"
+                ]
+            });
         })()
         .then(() => {
             console.log("Project start : \x1b[31mnpm run start\x1b[0m");
@@ -94,7 +88,13 @@ try{
  * @param {String} name now file exists ../templates/[filename]
  * @param {String} filePath project file will saved [dir/filename]
  */
-async function ejsRender(name, filePath, renderOption = { view: true }) {
+async function ejsRender(name, filePath, renderOption = {}) {
+    
+    // default setting
+    renderOption.view = true;
+    renderOption.strict = program.opts().strict;
+
+
     const target = path.join(__dirname,'..','lib',`${name}.ejs`);
 
     await ejs.renderFile(target, renderOption, "locals", function(err, str) {
