@@ -47,6 +47,7 @@ try{
             // Config area.
             await ejsRender("package", "/package.json", renderOption);
             await ejsRender("env", "/.env");
+            await ejsRender("gitIgnore", "/.gitignore");
             await ejsRender("dbConnect", "/src/config/dbConnection.js");
             
             
