@@ -43,18 +43,31 @@ try{
 
             renderOption.projectName = "default";
             // Next, Rendering EJS
+
+            // Config area.
             await ejsRender("package", "/package.json", renderOption);
             await ejsRender("env", "/.env");
+            
+            
+            // Base area.
             await ejsRender("app", "/src/app.js");
             await ejsRender("www", "/src/bin/www");
+            
+
+            // Router area.
             await ejsRender("router", "/src/routers/index.js");
+            await ejsRender("routerTest", "/src/routers/test.js");
+
+
+            // Controller & Service area.
             await ejsRender("controller", "/src/controllers/indexController.js");
+            await ejsRender("service", "/src/services/indexService.js");
 
 
-            // view area.
+            // View area.
             renderOption.testStr = "%= test %";
             await ejsRender("view", "/src/views/index.ejs", renderOption);
-            
+
             renderOption.errorArr = [];
             renderOption.errorArr.push("%= message %");
             renderOption.errorArr.push("%= error.status %");
@@ -95,6 +108,7 @@ async function createDir(dirName) {
     fs.mkdirSync(`${dirName}/src/bin`);
     fs.mkdirSync(`${dirName}/src/config`);
     fs.mkdirSync(`${dirName}/src/controllers`);
+    fs.mkdirSync(`${dirName}/src/services`);
     fs.mkdirSync(`${dirName}/src/models`);
     fs.mkdirSync(`${dirName}/src/routers`);
     fs.mkdirSync(`${dirName}/src/views`);
