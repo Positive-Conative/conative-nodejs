@@ -1,14 +1,2 @@
-*.iml
-.idea
-.tscache
-.DS_Store
 node_modules/
-typings/
-coverage/
-test/typescript/axios.js*
-sauce_connect.log
-package-lock.json
-
-
-lib/node_modules
 lib/package-lock.json
