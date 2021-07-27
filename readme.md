@@ -1,4 +1,5 @@
 ## Browser Support
+[![install size](https://packagephobia.com/badge?p=conative-nodejs)](https://packagephobia.com/result?p=conative-nodejs)
 
 ![Chrome](https://raw.github.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png) | ![Firefox](https://raw.github.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png) | ![Safari](https://raw.github.com/alrra/browser-logos/master/src/safari/safari_48x48.png) | ![Opera](https://raw.github.com/alrra/browser-logos/master/src/opera/opera_48x48.png) | ![Edge](https://raw.github.com/alrra/browser-logos/master/src/edge/edge_48x48.png) | ![IE](https://raw.github.com/alrra/browser-logos/master/src/archive/internet-explorer_9-11/internet-explorer_9-11_48x48.png) |
 --- | --- | --- | --- | --- | --- |
@@ -13,3 +14,6 @@ It is not yet fully completed, and you need to check the module, DB Connection, 
 
 ## Installing
 <b>conative-nodejs [ Options ] [ Path/Filename ]</b>
+
+Git : https://github.com/Positive-Conative/conative-nodejs
+Npm : https://www.npmjs.com/package/conative-nodejs

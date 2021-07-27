@@ -25,7 +25,7 @@ program
 
 // Get dir name
 const dirName = program.opts().name;
-const createDir = require('./createDir');
+const createDir = require('../lib/createDir');
 
 try{
     /**
@@ -61,8 +61,8 @@ try{
             await ejsRender("viewError", "/src/views/error.ejs", renderOption);
         })()
         .then(() => {
-            console.log("if you installed pm2, \x1b[31mnpm start\x1b[0m");
-            console.log("else you not installed pm2, \x1b[31mnpm run test\x1b[0m\n\n");
+            console.log("Project start : \x1b[31mnpm run start\x1b[0m");
+            console.log("Check your browser! - \x1b[31mlocalhost:8080\x1b[0m\n\n");
             console.log("And, if you want connect DB or change Port,");
             console.log("You check \x1b[31mproject/.env\x1b[0m file.\n\n");
             console.log("And... Thank you for downloading! Happy Programming :)");
@@ -78,7 +78,7 @@ try{
  * @param {String} filePath project file will saved [dir/filename]
  */
 async function ejsRender(name, filePath, renderOption = { view: true }) {
-    const target = path.join(__dirname,'..','lib',`${name}.ejs`);
+    const target = path.join(__dirname,'..','templates',`${name}.ejs`);
 
     await ejs.renderFile(target, renderOption, "locals", function(err, str) {
         if(err != undefined) {
