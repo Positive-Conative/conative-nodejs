@@ -24,8 +24,10 @@ Npm : https://www.npmjs.com/package/conative-nodejs
 
 # Using
 * <b>conative-nodejs [ Options ] -n [ Path/Dirname ]</b><br>
-    * <b>ex) conative-nodejs -n dirname </b><br>
-    * <b>ex) conative-nodejs -s -n /your/path/dirname </b>
+    * ex) conative-nodejs -n dirname<br>
+    * ex) conative-nodejs -s -n /your/path/dirname<br>
+* <b>cd [ Path/Dirname ]</b><br>
+* <b>npm start</b><br>
 
 <br>
 
